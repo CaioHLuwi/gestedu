@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <title>Consulta</title>
+</head>
+<body>
+    <!-- Criamos um formulário para consulta -->
+    <form name = "Consultar">    
+        <!-- Código precisa, pois através dele(PK) para buscar dados -->
+        Digite o código: <br/>
+        <input type = "number" name = "RMAluno">
+        <br/>
+
+        <!-- Nome: <br/>
+        <input type = "text" name = "txtNome">
+        <br/>
+        e-mail: <br/>
+        <input type = "text" name = "txtEmail">
+        <br/>
+        Telefone: <br/>
+        <input type = "text" name = "txtTelefone">
+        <br/><br/> -->
+        <!-- Criamos um botão para a operação de busca -->
+        <input type = "button" name = "btBuscar" value = "Consultar" onclick = "buscar(event, this)">
+        <!-- Criamos um butão para limpar os campos -->
+        <input type = "reset" value = "Limpar">
+        <br/>        
+
+        <div class="data-container">
+
+        </div>
+    </form>
+    <!-- Iniciamos a programação JavaScript -->
+    <script type="text/javascript" src="assets/script.js"> </script>
+</body>
+</html>
