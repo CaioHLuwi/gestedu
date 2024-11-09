@@ -59,16 +59,16 @@ function criaAluno($alunoInput){ // Cria aluno usando método POST do Insomnia c
                 'status' => 201,
                 'message' => 'Aluno criado com sucesso.',
             ];
-            header("HTTP/1.0 201 Created");
+            header("HTTP/1.0 200 Success");
             return json_encode($dados);
 
         }else{
 
             $dados = [
                 'status' => 404,
-                'message' => 'Nenhum aluno encontrado.',
+                'message' => 'Não foi possível criar o aluno',
             ];
-            header("HTTP/1.0 404 Nenhum aluno encontrado");
+            header("HTTP/1.0 404 Not Found");
             return json_encode($dados);
         }
     }
