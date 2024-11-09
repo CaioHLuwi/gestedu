@@ -1,0 +1,16 @@
+#view{
+    border: 1px solid red;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.row {
+    width: 100%;
+}
+
+.nav-item {
+    margin-left: 10px;
+}

@@ -80,7 +80,7 @@ function getAlunoList(){ // Lista todos os alunos usando o método GET do Insomn
     
     global $conn;
 
-    $query = "SELECT * FROM alunos";
+    $query = "SELECT RMAluno, Nome, CPF, DATE_FORMAT(STR_TO_DATE(dataNascimento, '%Y-%m-%d'), '%d-%m-%Y') as DataNascimento, Endereco, Telefone, Situacao FROM alunos;";
     $query_run = mysqli_query($conn, $query);
 
     if($query_run){

@@ -28,7 +28,7 @@ function mostrarResposta(codigo,data){
         alert("Sem registro com este código : " + codigo + " !!");
     }
     else {
-        console.log(data);
+        dataContainer.innerHTML = ''; // Limpa o conteúdo do container
 
         const campos = [
             `RM: ${data.information.RMAluno}`,
@@ -51,7 +51,7 @@ function mostrarResposta(codigo,data){
 
             dataContainer.appendChild(document.createElement('br')); // No final de cada um dos Spans adiciona um BR
 
-        })
+        });
         // document.Consultar.txtNome.value = data.information.CPF;
         // document.Consultar.txtEmail.value = data.information.DataNascimento;
         // document.Consultar.txtTelefone.value = data.information.telefone; 
