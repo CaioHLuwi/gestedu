@@ -6,7 +6,7 @@ function buscar(event, form){
     //Este comando é para prevenir o cancelamento de evento: evento de click->buscar os dados
     event.preventDefault();
     //variável ra é um número inteiro. parseInt(...) converter texto para inteiro
-    const codigo = parseInt(document.Consultar.RMAluno.value);
+    const codigo = parseInt(document.Consultar.rmAluno.value);
    
     if ( codigo != "" ) { //RA não pode ser null, pois através dele para buscar dados
             //Endereço do api que construimos
