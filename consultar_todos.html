@@ -27,7 +27,10 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="consultar_aluno.html">Consultar</a>
+                        <a class="nav-link active" aria-current="page" href="consultar_todos.html">Todos alunos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="consultar_aluno.html">Consultar</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="cadastro.html">Cadastrar</a>
@@ -157,6 +160,16 @@
                 var textoEndereco = document.createTextNode(item.Endereco);
                 tdEndereco.appendChild(textoEndereco);
                 tr.appendChild(tdEndereco);  
+
+                var tdTelefone = document.createElement("td");
+                var textoTelefone = document.createTextNode(item.Telefone);
+                tdTelefone.appendChild(textoTelefone);
+                tr.appendChild(tdTelefone);  
+
+                var tdSituacao = document.createElement("td");
+                var textoSituacao = document.createTextNode(item.Situacao);
+                tdSituacao.appendChild(textoSituacao);
+                tr.appendChild(tdSituacao); 
                 
                 //Anexar os campos no corpo da tabela
                 corpo.appendChild(tr);
