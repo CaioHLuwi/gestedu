@@ -3,7 +3,7 @@ error_reporting(0);
 
 header('Access-Control-Allow-Origin:*'); // Autoriza todo tipo de acesso
 header('Content-Type: application/json; charset=utf-8'); // Tipo Json
-header('Access-Control-Allow-Method: GET'); // Operação POST do Crud
+header('Access-Control-Allow-Method: POST'); // Operação POST do Crud
 header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X');
 
 include('function.php');

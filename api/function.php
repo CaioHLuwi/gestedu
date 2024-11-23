@@ -1,6 +1,6 @@
 <?php
 
-require '../inc/dbcon.php';
+require '../inc/config.php';
 
 function erro422($mensagem){
     
@@ -271,6 +271,11 @@ function deletaAluno($alunoParametros){
         header("HTTP/1.0 404 Not Found");
         return json_encode($dados);
     }
+}
+
+function loginAluno($alunoParametros){
+
+
 }
 
 ?>

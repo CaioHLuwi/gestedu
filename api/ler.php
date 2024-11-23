@@ -16,7 +16,7 @@ if($requestMethod == "GET"){
 
         $aluno = getAluno($_GET);
         echo $aluno;
-    }else {
+    } else {
         $listaAlunos = getAlunoList();
         echo $listaAlunos;
     }
