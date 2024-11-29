@@ -1,28 +1,18 @@
     const formExcluir = document.querySelector("form[name=excluir]");
 
-        /* Lógica de algoritmos: Buscar dados primeiro, depios exclui-los !!! */
-        //Criamos uma função (subprograma) para buscar os dados no BD (xampp-MySQL)
         function buscarAluno(event, form){
-            //Este comando é para prevenir o cancelamento de evento
             event.preventDefault();
-            //variáveis para obter os dados digitados
             const ra  = parseInt(formExcluir.rmAluno.value);         
          
             if ( ra != "" ) {            
-                    //Endereço do api que construimos
                     const URL = 'http://localhost/gest_edu/api/ler.php?RMAluno=' + ra;                   
 
-                    fetch( URL , {method: 'GET'} ) //Método "GET"
-                        //para transformar a resposta de texto para JSON
-                        /*Uma Arrow function é exatamente como uma função/callback normal */   
+                    fetch( URL , {method: 'GET'} )
                         .then(resp => resp.json())                                    
                         .then(data => mostrarResposta(data))
-                        //Além disso podemos utilizar o método catch() para tratar erros.
-                        //e a mensagem de erros estará console
                         .catch(erro => console.log(erro));            
             }
         }
-        //Criamos uma função (subprograma) para excluir os dados no BD (xampp-MySQL)
         function excluirAluno(event, form){
             formExcluir.rmAluno.value = "";
             formExcluir.nomeAluno.value = "";
@@ -31,21 +21,15 @@
             formExcluir.enderecoAluno = "";        
             formExcluir.telefoneAluno = "";    
             formExcluir.situacaoAluno = "";
-            //Este comando é para prevenir o cancelamento de evanto
+
             event.preventDefault();
-            //variáveis para obter os dados digitados
             const ra = parseInt(formExcluir.rmAluno.value);
 
             if ( ra != "" ) {            
-                    //Endereço do api que construimos
                     const URL = 'http://localhost/gest_edu/api/deletar.php?RMAluno='+ra;                    
 
-                     fetch( URL , {method: 'DELETE'} ) //Método "DELETE"
-                        //para transformar a resposta de texto para JSON
-                        /*Uma Arrow function é exatamente como uma função/callback normal */                                   
+                     fetch( URL , {method: 'DELETE'} )                        
                         .then(data => mostrarRespostaDelete(data))
-                        //Além disso podemos utilizar o método catch() para tratar erros.
-                        //e a mensagem de erros estará console
                         .catch(erro => console.log(erro));            
             }
         }
