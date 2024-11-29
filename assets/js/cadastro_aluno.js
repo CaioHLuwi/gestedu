@@ -1,9 +1,7 @@
-//Criamos a função: salvar(event, this)
 const cadastroForm = document.querySelector("form[name='cadastro']");
 
 function salvar(event, form) { 
-    event.preventDefault(); //para evitar o cancelamento do evento
-    //As variáveis para armazenar os dados digitados por usuário
+    event.preventDefault();
 
     const rmAluno = cadastroForm.rmAluno.value;
     const nomeAluno = cadastroForm.nomeAluno.value;
@@ -13,7 +11,6 @@ function salvar(event, form) {
     const telefoneAluno = cadastroForm.telefoneAluno.value;
     const situacaoAluno = cadastroForm.situacaoAluno.value;
 
-    //Uma lista para armazenar o conjunto de dados obtidos em formato JSON
     const dados = {
         RMAluno: rmAluno,
         Nome: nomeAluno,
@@ -23,15 +20,15 @@ function salvar(event, form) {
         Telefone: telefoneAluno,
         Situacao: situacaoAluno
     };
-    //Uma lista para os dados de configuração
+
     const options = {
-        method: 'POST', //o método 'post' é para enviar os dados
+        method: 'POST',
         header: {'Content-Type':'application/json',},
-        //O comando JSON.stringify(dados) converter o formato JSON para texto normal
         body: JSON.stringify(dados),
     };
+
     if (nomeAluno != ""){
-        const URL = 'http://localhost/gest_edu/api/criar.php'; //endereço do api
+        const URL = 'http://localhost/gest_edu/api/criar.php';
         fetch(URL, options)
             .then(resp => resp.json())
             .then(data => mostrarResposta(dados))
