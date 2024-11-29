@@ -43,7 +43,7 @@ global $conn;
             ]);
             exit;
         } else { 
-            echo json_encode(["status" => 401, "message" => "Usuário ou senha inválidos"]);
+            echo json_encode(["status" => 401, "message" => "Usuário ou senha inválido"]);
         }
     } catch (PDOException $e) {
         error_log("Erro no banco de dados: " . $e->getMessage());

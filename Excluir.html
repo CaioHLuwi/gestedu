@@ -35,10 +35,8 @@
         </nav>
     </header>
     <div class="container-fluid">
-        <!-- Criamos um formulário para exclusão -->
         <form name="excluir">
             <p2>Excluir dados através do api construído:</p2><br/>      
-            <!-- RA precisa, pois é através RA para excluir o registro no BD -->
             RA: <br/>
             <input type="number" name="rmAluno">
             <br/>
@@ -60,13 +58,13 @@
             Situação: <br/>
             <input type="text" name="situacaoAluno">
             <br/><br/>
-            <!-- Criamos dois botões para realizar as operações: buscar e excluir -->
+
             <input type="button" name="btBuscar" value="Buscar" onclick="buscarAluno(event, this)">
             <input type="button" name="btExcluir" value="Excluir" onclick="excluirAluno(event, this)">
             <br/>
         </form>
     </div>
-    <!-- Iniciamos a programação JavaScript -->
+
     <script type="text/javascript" src="assets/excluir.js"> </script>
     <script type="text/javascript" src="assets/timeout.js"></script>
 </body>

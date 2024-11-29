@@ -8,12 +8,10 @@ function resetTimers(){
     clearTimeout(warningTimer);
     clearTimeout(logoutTimer);
 
-    // Timer para exibir o aviso de inatividade
     warningTimer = setTimeout(() => {
         alert("Sua sessão irá expirar em 1 minuto. Verifique se está tudo salvo!");
     }, warningTimeout);
 
-    // Timer para exibir o aviso de expiração da sessão e forçar o logout
     logoutTimer = setTimeout(() => {
         alert("Sua sessão expirou! Você será redirecionado para a tela de login.");
         window.location.href = "login.html";

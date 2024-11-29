@@ -36,25 +36,12 @@
         </nav>
     </header>
     <div class="container-fluid">
-      <!-- Criamos um formulário para consulta -->
       <form name="consultar">    
-          <!-- Código precisa, pois através dele(PK) para buscar dados -->
           Digite o código: <br/>
           <input type = "number" name = "rmAluno">
           <br/>
 
-          <!-- Nome: <br/>
-          <input type = "text" name = "txtNome">
-          <br/>
-          e-mail: <br/>
-          <input type = "text" name = "txtEmail">
-          <br/>
-          Telefone: <br/>
-          <input type = "text" name = "txtTelefone">
-          <br/><br/> -->
-          <!-- Criamos um botão para a operação de busca -->
           <input type = "button" name = "btBuscar" value = "Consultar" onclick = "buscar(event, this)">
-          <!-- Criamos um butão para limpar os campos -->
           <input type = "reset" value = "Limpar">
           <br/>        
 
@@ -64,7 +51,6 @@
       </form>
     </div>
     
-    <!-- Iniciamos a programação JavaScript -->
     <script type="text/javascript" src="assets/consultar_especifico.js"> </script>
     <script type="text/javascript" src="assets/timeout.js"></script>
 </body>
