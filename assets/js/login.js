@@ -43,19 +43,19 @@ function mostrarResposta(data) {
     if (data.status === 401) {
         warningSpace.innerHTML = `<span> <i class="fa-solid fa-triangle-exclamation"></i> ${data.message} </span>`
     } else {
-        warningSpace.classList.replace('login-warning', 'login-sucess');
+        warningSpace.classList.replace('login-warning', 'login-sucess')
         warningSpace.innerHTML = `<span> Login efetuado com sucesso! </span>`;
-        buttonLogin.style.backgroundColor = 'red';
+        buttonLogin.style.backgroundColor = 'green';
 
 
         setTimeout(() => {
 
             perfil = data.information.perfil;
-            if (perfil.toLowerCase().includes("admin")) {
-                location.href = "index.html";
+            if (perfil.toLowerCase().includes("universidade")) {
+                location.href = "home.html";
             }
             else
-                location.href = "listaSec.html";
+                location.href = "home.html";
         }, 3000)
     }
 }

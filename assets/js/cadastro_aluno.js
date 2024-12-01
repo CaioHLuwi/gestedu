@@ -1,6 +1,6 @@
 const cadastroForm = document.querySelector("form[name='cadastro']");
 
-function salvar(event, form) { 
+function salvaAluno(event, form) { 
     event.preventDefault();
 
     const rmAluno = cadastroForm.rmAluno.value;
@@ -31,9 +31,13 @@ function salvar(event, form) {
         const URL = 'http://localhost/gest_edu/api/criar.php';
         fetch(URL, options)
             .then(resp => resp.json())
-            .then(data => mostrarResposta(dados))
+            .then(data => mostrarResposta(data))
             .catch(erro => console.log(erro));
-    }     
+            
+        location.reload();
+    } else { 
+        console.log('Preencha os dados')
+    }
 }
 
 function mostrarResposta(dados) {

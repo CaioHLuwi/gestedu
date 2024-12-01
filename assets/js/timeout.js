@@ -14,7 +14,7 @@ function resetTimers(){
 
     logoutTimer = setTimeout(() => {
         alert("Sua sessão expirou! Você será redirecionado para a tela de login.");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }, sessionTimeout);
 }
 
