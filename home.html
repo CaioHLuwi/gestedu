@@ -56,15 +56,36 @@
             <div class="top">
               <span class="fs-4"> Alunos </span>
               <input type="text" name="buscarField" id="buscarField" placeholder="Buscar">
-              <span> <i class="fa-solid fa-caret-down"></i> RM </span>
-              <span> <i class="fa-solid fa-caret-down"></i> Situação </span>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-solid fa-user-plus"></i> | Novo aluno </button>
+              <button class="button-exclude" type="button" data-bs-toggle="modal" data-bs-target="#excluirModal"> <i class="fa-solid fa-user-xmark"></i> | Excluir aluno </button>
 
-              <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal" id="excluirModal" tabindex="-1" aria-labelledby="excluirModalLabel" aria-hidden="true">
                 <div class="modal-dialog"> 
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title" id="exampleModalLabel">Criar novo aluno</h1>
+                      <h1 class="modal-title" id="criarModalLabel">Remover aluno</h1>
+                    </div>
+                    <div class="modal-body">
+                      <form class="d-flex flex-column" name="excluir">
+                        Digite o RM do aluno o qual deseja remover:
+                        <input type="number" name="rmAluno">
+                    </div>
+                    <div class="modal-footer">
+                      <button class="button-close" data-bs-dismiss="modal"> Fechar </button>
+                      <button class="btn" onclick="excluirAluno(event.preventDefault())"> Excluir </button>
+                      </form>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+
+              <span> <i class="fa-solid fa-caret-down"></i> Situação </span>
+              <button class="button-add" type="button" data-bs-toggle="modal" data-bs-target="#criarModal"> <i class="fa-solid fa-user-plus"></i> | Novo aluno </button>
+
+              <div class="modal" id="criarModal" tabindex="-1" aria-labelledby="criarModalLabel" aria-hidden="true">
+                <div class="modal-dialog"> 
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title" id="criarModalLabel">Criar novo aluno</h1>
                     </div>
                     <div class="modal-body">
                       <form class="d-flex flex-column" name="cadastro">
@@ -107,6 +128,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/1392966492.js" crossorigin="anonymous"></script>
+  <script src="assets/js/excluir.js"></script>
   <script src="assets/js/cadastro_aluno.js"></script>
   <script src="assets/js/consultar_todos.js"></script>
   <script type="text/javascript" src="assets/js/timeout.js"></script>
