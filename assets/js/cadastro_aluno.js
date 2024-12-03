@@ -11,7 +11,7 @@ function salvaAluno(event) {
     const telefoneAluno = cadastroForm.telefoneAluno.value;
     const situacaoAluno = cadastroForm.situacaoAluno.value;
 
-    if (!nomeAluno) {
+    if (!rmAluno || !nomeAluno || !cpfAluno || !dataNascimentoAluno || !enderecoAluno || !telefoneAluno || !situacaoAluno) {
         alert('Preencha todos os campos obrigatórios.');
         return;
     }
