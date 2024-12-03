@@ -41,7 +41,7 @@ function salvaAluno(event) {
         })
         .catch(erro => {
             console.error(erro);
-            alert('Erro ao conectar-se ao servidor. Tente novamente mais tarde.');
+            location.reload();
         });
 }
 
