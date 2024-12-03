@@ -12,32 +12,6 @@
 </head>
 
 <body>
-  <!-- <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="logo" href="index.html"><img src="assets/img/logo.png"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="consultar_todos.html">Todos alunos</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="consultar_aluno.html">Consultar</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="cadastro.html">Cadastrar</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="excluir.html">Excluir</a>
-                      </li>
-                    </ul>
-                  </div>
-            </div>
-        </nav>
-    </header> -->
   <div class="container-principal m-0 p-0">
     <div class="row">
       <div class="col-1 h-100 d-flex">
@@ -71,24 +45,23 @@
                     </div>
                     <div class="modal-footer">
                       <button class="button-close" data-bs-dismiss="modal"> Fechar </button>
-                      <button class="btn" onclick="excluirAluno(event.preventDefault())"> Excluir </button>
+                      <button class="btn-save" onclick="excluirAluno(event.preventDefault())"> Excluir </button>
                       </form>
                     </div>
                   </div>   
                 </div>
               </div>
 
-              <span> <i class="fa-solid fa-caret-down"></i> Situação </span>
-              <button class="button-add" type="button" data-bs-toggle="modal" data-bs-target="#criarModal"> <i class="fa-solid fa-user-plus"></i> | Novo aluno </button>
+              <button class="button-add" type="button" data-bs-toggle="modal" data-bs-target="#editarModal"> <i class="fa-solid fa-user-pen"></i> | Editar aluno </button>
 
-              <div class="modal" id="criarModal" tabindex="-1" aria-labelledby="criarModalLabel" aria-hidden="true">
+              <div class="modal" id="editarModal" tabindex="-1" aria-labelledby="criarModalLabel" aria-hidden="true">
                 <div class="modal-dialog"> 
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title" id="criarModalLabel">Criar novo aluno</h1>
+                      <h1 class="modal-title" id="criarModalLabel">Alterar aluno</h1>
                     </div>
                     <div class="modal-body">
-                      <form class="d-flex flex-column" name="cadastro">
+                      <form class="d-flex flex-column" name="alterar">
                         RM:
                         <input type="text" name="rmAluno">
                         Nome:
@@ -106,7 +79,56 @@
                     </div>
                     <div class="modal-footer">
                       <button class="button-close" data-bs-dismiss="modal"> Fechar </button>
-                      <button class="btn" onclick="salvaAluno(event, this)"> Salvar </button>
+                      <button class="btn-save" onclick="buscar(event, this)"> Buscar </button>
+                      <button class="btn-save" onclick="alterarAluno(event.preventDefault(), this)"> Alterar </button>
+                      </form>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+
+              <button class="button-add" type="button" data-bs-toggle="modal" data-bs-target="#criarModal"> <i class="fa-solid fa-user-plus"></i> | Novo aluno </button>
+
+              <div class="modal" id="criarModal" tabindex="-1" aria-labelledby="criarModalLabel" aria-hidden="false">
+                <div class="modal-dialog"> 
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title" id="criarModalLabel">Criar novo aluno</h1>
+                    </div>
+                    <div class="modal-body">
+                      <form class="d-flex flex-column" name="cadastro">
+                      RM:
+                      <input type="text" name="rmAluno" required>
+                      Nome:
+                      <input type="text" name="nomeAluno" required>
+                      CPF:
+                      <input type="text" name="cpfAluno" required>
+                      DataNascimento
+                      <input type="date" name="dataNascimentoAluno" required>
+                      Endereço:
+                      <input type="text" name="enderecoAluno" required>
+                      Telefone:
+                      <input type="text" name="telefoneAluno" required>
+                      Situação acadêmica:
+                      <input type="text" name="situacaoAluno" required>
+                      RM:
+                      <input type="text" name="rmAluno" required>
+                      Nome:
+                      <input type="text" name="nomeAluno" required>
+                      CPF:
+                      <input type="text" name="cpfAluno" required>
+                      DataNascimento
+                      <input type="date" name="dataNascimentoAluno" required>
+                      Endereço:
+                      <input type="text" name="enderecoAluno" required>
+                      Telefone:
+                      <input type="text" name="telefoneAluno" required>
+                      Situação acadêmica:
+                      <input type="text" name="situacaoAluno" required>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="button-close" data-bs-dismiss="modal"> Fechar </button>
+                      <button class="btn-save" onclick="salvaAluno(event, this)"> Salvar </button>
                       </form>
                     </div>
                   </div>   
@@ -128,6 +150,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/1392966492.js" crossorigin="anonymous"></script>
+  <script src="assets/js/atualizar_aluno.js"></script>
   <script src="assets/js/excluir.js"></script>
   <script src="assets/js/cadastro_aluno.js"></script>
   <script src="assets/js/consultar_todos.js"></script>

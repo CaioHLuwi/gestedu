@@ -183,10 +183,14 @@
 }
 
 .button-close {
-    background-color: var(--cor-texto-ativa);
+    background-color: #bc0707;
+    border: none;
+    padding: 10px;
+    color: var(--cor-texto-secundaria);
+    border-radius: 13px;
 }
 
-.box .top button {
+.box .top .btn-save {
     background-color: var(--cor-fundo-principal);
     border: none;
     padding: 10px;
@@ -223,7 +227,7 @@
     flex-direction: row;
     text-align: left;
     color: var(--cor-fundo-secundaria);
-    padding-left: 10px;
+    padding: 10px 10px 10px 15px;
     height: 100%;
 }
 
@@ -245,4 +249,8 @@
 .table-color:nth-child(even) {
     background-color: #E4E3E3;
     border-radius: 20px;
+}
+
+#tabelaAlunos table{
+    width: 100%;
 }

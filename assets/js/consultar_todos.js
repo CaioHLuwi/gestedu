@@ -63,7 +63,7 @@ function criarTabela(conteudo) {
         tr.appendChild(tdCPF);
 
         var tdDataNascimento = document.createElement("td");
-        var textoDataNascimento = document.createTextNode(item.Telefone);
+        var textoDataNascimento = document.createTextNode(item.DataNascimento);
         tdDataNascimento.appendChild(textoDataNascimento);
         tdDataNascimento.classList.add('table-item');
         tr.appendChild(tdDataNascimento);   

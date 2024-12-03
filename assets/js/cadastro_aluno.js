@@ -1,6 +1,6 @@
 const cadastroForm = document.querySelector("form[name='cadastro']");
 
-function salvaAluno(event, form) { 
+function salvaAluno(event) {
     event.preventDefault();
 
     const rmAluno = cadastroForm.rmAluno.value;
@@ -10,6 +10,11 @@ function salvaAluno(event, form) {
     const enderecoAluno = cadastroForm.enderecoAluno.value;
     const telefoneAluno = cadastroForm.telefoneAluno.value;
     const situacaoAluno = cadastroForm.situacaoAluno.value;
+
+    if (!nomeAluno) {
+        alert('Preencha todos os campos obrigatórios.');
+        return;
+    }
 
     const dados = {
         RMAluno: rmAluno,
@@ -23,27 +28,47 @@ function salvaAluno(event, form) {
 
     const options = {
         method: 'POST',
-        header: {'Content-Type':'application/json',},
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dados),
     };
 
-    if (nomeAluno != ""){
-        const URL = 'http://localhost/gest_edu/api/criar.php';
-        fetch(URL, options)
-            .then(resp => resp.json())
-            .then(data => mostrarResposta(data))
-            .catch(erro => console.log(erro));
-            
-        location.reload();
-    } else { 
-        console.log('Preencha os dados')
-    }
+    const URL = 'http://localhost/gest_edu/api/criar.php';
+    fetch(URL, options)
+        .then(resp => resp.json())
+        .then(data => {
+            mostrarResposta(data);
+            atualizarTabela();
+        })
+        .catch(erro => {
+            console.error(erro);
+            alert('Erro ao conectar-se ao servidor. Tente novamente mais tarde.');
+        });
 }
 
 function mostrarResposta(dados) {
-    if (dados.RMAluno != ''){
-        alert("Dados incluidos com sucesso !!!");                        
-    }else {
-        alert("Erro ao incluir os dados !!!");
-    }            
+    if (dados.success) {
+        alert("Dados incluídos com sucesso!");
+    } else {
+        alert("Erro ao incluir os dados: " + (dados.message || "Erro desconhecido."));
+    }
+}
+
+function atualizarTabela() {
+    fetch('http://localhost/gest_edu/api/listar.php')
+        .then(resp => resp.json())
+        .then(data => {
+            const tabelaAlunos = document.getElementById('tabelaAlunos');
+            tabelaAlunos.innerHTML = data.map(aluno => `
+                <tr>
+                    <td>${aluno.RM}</td>
+                    <td>${aluno.Nome}</td>
+                    <td>${aluno.CPF}</td>
+                    <td>${aluno.DataNascimento}</td>
+                    <td>${aluno.Endereco}</td>
+                    <td>${aluno.Telefone}</td>
+                    <td>${aluno.Situacao}</td>
+                </tr>
+            `).join('');
+        })
+        .catch(erro => console.log('Erro ao atualizar tabela:', erro));
 }
