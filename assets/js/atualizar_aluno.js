@@ -13,12 +13,10 @@ function buscar(event,form) {
 }       
 
 function mostrarRespostaBuscar(codigo,data){
-    console.log(data)
     if (codigo != data.information.RMAluno){
         alert("Sem registro com este código " + codigo + " !");
     }
     else {
-        console.log(data) ;
         formEditar.nomeAluno.value = data.information.Nome;
         formEditar.cpfAluno.value = data.information.CPF;
         formEditar.dataNascimentoAluno.value = data.information.DataNascimento;
@@ -27,8 +25,7 @@ function mostrarRespostaBuscar(codigo,data){
         formEditar.situacaoAluno.value = data.information.Situacao;
     }         
 }
-function Alterar(event, form) {
-    event.preventDefault();
+function alterarAluno(event, form) {
 
     const rmAluno = formEditar.rmAluno.value;
     const nomeAluno = formEditar.nomeAluno.value;
@@ -66,16 +63,9 @@ function Alterar(event, form) {
 function mostrarRespostaAlterar(data) {
     console.log(data);
     if (data.status == 200){
-        alert("Dados alterados com sucesso !!!");                        
+        console.log("Dados alterados com sucesso !!!");   
+        location.reload();                     
     }else{
-        alert("Erro ao alterar os dados !!!");
-    }
-   
-    formEditar.rmAluno.value = ""; 
-    formEditar.nomeAluno.value = "";
-    formEditar.cpfAluno.value = "";
-    formEditar.dataNascimentoAluno.value = ""; 
-    formEditar.enderecoAluno.value = "";    
-    formEditar.telefoneAluno.value = "";    
-    formEditar.situacaoAluno.value = "";             
+        console.log("Erro ao alterar os dados !!!");
+    }          
 }
