@@ -29,7 +29,30 @@
           <div class="box w-100">
             <div class="top">
               <span class="fs-4"> Alunos </span>
-              <input type="text" name="buscarField" id="buscarField" placeholder="Buscar">
+              <form name="consultar">
+                <div class="input-group">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" name="rmAluno" class="input-search" placeholder="Digite o RM do aluno" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                  <button class="btn btn-search" type="button" id="button-addon1" data-bs-toggle="modal" data-bs-target="#consultarModal" onclick="consultarAluno(event, this)">Buscar</button>
+                  <div class="modal" id="consultarModal" tabindex="-1" aria-labelledby="consultarModalLabel" aria-hidden="true">
+                    <div class="modal-dialog"> 
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title" id="consultarModalLabel">Aluno: <span id="alunoNome" class="alunoSelecionado"> </span> </h1>
+                        </div>
+                        <div class="modal-body">
+                          <div class="data-container">
+
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="button-close" data-bs-dismiss="modal"> Fechar </button>
+                        </div>
+                      </div>   
+                    </div>
+                  </div>
+                </div>
+              </form>
               <button class="button-exclude" type="button" data-bs-toggle="modal" data-bs-target="#excluirModal"> <i class="fa-solid fa-user-xmark"></i> | Excluir aluno </button>
 
               <div class="modal" id="excluirModal" tabindex="-1" aria-labelledby="excluirModalLabel" aria-hidden="true">
@@ -64,6 +87,7 @@
                       <form class="d-flex flex-column" name="alterar">
                         RM:
                         <input type="text" name="rmAluno">
+                        <span class="error invisible" id="rmFieldError"> Digite o RM do aluno</span>
                         Nome:
                         <input type="text" name="nomeAluno">
                         CPF:
@@ -136,6 +160,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/1392966492.js" crossorigin="anonymous"></script>
+  <script src="assets/js/consultar_especifico.js"></script>
   <script src="assets/js/atualizar_aluno.js"></script>
   <script src="assets/js/excluir.js"></script>
   <script src="assets/js/cadastro_aluno.js"></script>

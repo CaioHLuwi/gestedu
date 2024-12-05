@@ -16,7 +16,7 @@ async function excluirAluno(event) {
     .then(data => mostrarRespostaDelete(data))
     .then(location.reload())
     .catch((erro) => console.log(erro));
-      
+
   }
 }
 

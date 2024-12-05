@@ -1,4 +1,5 @@
 const formEditar = document.querySelector('form[name=alterar]');
+let rmFieldError = document.querySelector('#rmFieldError');
 
 function buscar(event,form) {
     event.preventDefault();        
@@ -8,8 +9,10 @@ function buscar(event,form) {
                 fetch( URL , {method: 'GET'} )                 
                     .then(resp => resp.json())                                    
                     .then(data => mostrarRespostaBuscar(rmAluno,data))                        
-                    .catch(erro => console.log(erro));            
-        }         
+                    .catch(erro => console.log(erro))        
+        } else {
+            rmFieldError.classList.remove('invisible');
+        }       
 }       
 
 function mostrarRespostaBuscar(codigo,data){

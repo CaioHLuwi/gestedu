@@ -161,18 +161,10 @@
     border-bottom: 1px solid #fff;
 }
 
-.right-side {
-}
-
 .box .top {
     padding: 15px;
     display: flex;
     justify-content: space-between;
-}
-
-.box .top span { 
-    color: var(--cor-fundo-principal);
-    font-weight: 600;
 }
 
 .box .top .modal input[type=text] {
@@ -253,4 +245,45 @@
 
 #tabelaAlunos table{
     width: 100%;
+}
+
+.error {
+    color: #bc0707;
+}
+
+.invisible {
+    display: none;
+}
+
+.input-group i {
+    position: absolute;
+    left: 2%;
+    top: 25%;
+}
+
+.input-group input.input-search {
+    padding-left: 30px;
+    border: solid 1px rgb(75, 75, 75);
+    border-radius: 25%;
+    outline: none;
+}
+
+.btn-search {
+    border: solid 1px var(--cor-fundo-principal);
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-secundaria);
+}
+
+.btn-search:hover, .btn-search:focus {
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-secundaria);
+}
+
+.data-span {
+    padding-top: 30px;
+}
+
+.alunoSelecionado {
+    color: var(--cor-fundo-principal);
+    font-weight: 600;
 }

@@ -1,10 +1,11 @@
 const dataContainer = document.querySelector('.data-container');
 const dataSpan = document.createElement('span');
+let formConsultar = document.querySelector('form[name=consultar]');
 
-function buscar(event, form){
+function consultarAluno(event, form){
     event.preventDefault();
 
-    const codigo = parseInt(document.consultar.rmAluno.value);
+    const codigo = parseInt(formConsultar.rmAluno.value);
    
     if ( codigo != "" ) {
 
@@ -12,16 +13,19 @@ function buscar(event, form){
 
             fetch( URL , {method: 'GET'} )                        
                 .then(resp => resp.json())                                    
-                .then(data => mostrarResposta(codigo,data))
+                .then(data => mostrarRespostaEspecifico(codigo,data))
                 .catch(erro => console.log(erro));            
     }
 }
-function mostrarResposta(codigo,data){
+function mostrarRespostaEspecifico(codigo,data){
     if (codigo != parseInt(data.information.RMAluno)){
         alert("Sem registro com este código : " + codigo + " !!");
     }
     else {
         dataContainer.innerHTML = '';
+
+        let alunoNomeField = document.querySelector('#alunoNome');
+        alunoNomeField.textContent = data.information.Nome;
 
         const campos = [
             `RM: ${data.information.RMAluno}`,
@@ -35,12 +39,17 @@ function mostrarResposta(codigo,data){
 
         campos.forEach(campo => {
             const spanElement = document.createElement('span');
+            const divElement = document.createElement('div');
 
             spanElement.textContent = campo;
 
             spanElement.classList.add('data-span');
 
-            dataContainer.appendChild(spanElement);
+            divElement.classList.add('data-element');
+
+            dataContainer.appendChild(divElement);
+
+            divElement.appendChild(spanElement);
 
             dataContainer.appendChild(document.createElement('br'));
 
