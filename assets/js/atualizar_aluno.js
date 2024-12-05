@@ -14,7 +14,7 @@ function buscar(event,form) {
 
 function mostrarRespostaBuscar(codigo,data){
     if (codigo != data.information.RMAluno){
-        alert("Sem registro com este código " + codigo + " !");
+        console.log("Sem registro com este código " + codigo + " !");
     }
     else {
         formEditar.nomeAluno.value = data.information.Nome;
