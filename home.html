@@ -28,11 +28,11 @@
         <div class="right-side d-flex align-items-center">
           <div class="box w-100">
             <div class="top">
-              <span class="fs-4"> Alunos </span>
+              <span class="fs-3 aluno-title"> Alunos </span>
               <form name="consultar">
-                <div class="input-group">
+                <div class="input-group mt-1">
                   <i class="fa-solid fa-magnifying-glass"></i>
-                  <input type="text" name="rmAluno" class="input-search" placeholder="Digite o RM do aluno" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                  <input type="text" name="rmAluno" class="input-search" placeholder="Digite o RM do aluno" aria-describedby="button-addon1">
                   <button class="btn btn-search" type="button" id="button-addon1" data-bs-toggle="modal" data-bs-target="#consultarModal" onclick="consultarAluno(event, this)">Buscar</button>
                   <div class="modal" id="consultarModal" tabindex="-1" aria-labelledby="consultarModalLabel" aria-hidden="true">
                     <div class="modal-dialog"> 
@@ -86,7 +86,7 @@
                     <div class="modal-body">
                       <form class="d-flex flex-column" name="alterar">
                         RM:
-                        <input type="text" name="rmAluno">
+                        <input type="text" placeholder="Digite o RM do aluno" name="rmAluno">
                         <span class="error invisible" id="rmFieldError"> Digite o RM do aluno</span>
                         Nome:
                         <input type="text" name="nomeAluno">

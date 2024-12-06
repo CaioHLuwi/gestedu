@@ -43,7 +43,7 @@ function mostrarRespostaEspecifico(codigo,data){
 
             spanElement.textContent = campo;
 
-            spanElement.classList.add('data-span');
+            spanElement.classList.add('data-span', 'info-alunos');
 
             divElement.classList.add('data-element');
 

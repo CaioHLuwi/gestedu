@@ -287,3 +287,14 @@
     color: var(--cor-fundo-principal);
     font-weight: 600;
 }
+
+.aluno-title {
+    color: var(--cor-fundo-principal);
+    font-weight: 600;
+}
+
+.info-alunos {
+    text-decoration: underline;
+    font-size: 1.2rem;
+    text-decoration-color: var(--cor-fundo-principal);
+}
